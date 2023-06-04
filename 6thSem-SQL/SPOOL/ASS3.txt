@@ -1,0 +1,68 @@
+SQL> SELECT COUNT(Order_no) FROM SALES_ORDER;
+
+COUNT(ORDER_NO)                                                                                                                                                                                         
+---------------                                                                                                                                                                                         
+              6                                                                                                                                                                                         
+
+SQL> SELECT AVG(Sell_price) FROM PRODUCT_MASTER;
+
+AVG(SELL_PRICE)                                                                                                                                                                                         
+---------------                                                                                                                                                                                         
+     3663.88889                                                                                                                                                                                         
+
+SQL> SELECT COUNT(*) FROM PRODUCT_MASTER WHERE Sell_price >= 1500;
+
+  COUNT(*)                                                                                                                                                                                              
+----------                                                                                                                                                                                              
+         4                                                                                                                                                                                              
+
+SQL> SELECT MAX(Sell_price) MAX_PRICE, MIN(Sell_price) MIN_PRICE FROM PRODUCT_MASTER;
+
+ MAX_PRICE  MIN_PRICE                                                                                                                                                                                   
+---------- ----------                                                                                                                                                                                   
+     12000        525                                                                                                                                                                                   
+
+SQL> UPDATE CLIENT_MASTER SET City='Madras' WHERE Client_no='C005';
+
+1 row updated.
+
+SQL> UPDATE CLIENT_MASTER SET Balance_due=3000 WHERE Client_no='C005';
+
+1 row updated.
+
+SQL> DELETE FROM CLIENT_MASTER WHERE State='TamilNadu';
+DELETE FROM CLIENT_MASTER WHERE State='TamilNadu'
+*
+ERROR at line 1:
+ORA-02292: integrity constraint (HR.SYS_C004074) violated - child record found 
+
+
+SQL> ALTER TABLE CLIENT_MASTER ADD(Telephone NUMBER(10));
+
+Table altered.
+
+SQL> ALTER TABLE CLIENT_MASTER MODIFY(Pincode NUMBER(10));
+
+Table altered.
+
+SQL> ALTER TABLE CLIENT_MASTER DROP(Address2);
+
+Table altered.
+
+SQL> CREATE TABLE CLIENT_MASTER_DUPLICATE AS SELECT * FROM CLIENT_MASTER WHERE 1=2;
+
+Table created.
+
+SQL> INSERT INTO CLIENT_MASTER_DUPLICATE SELECT * FROM CLIENT_MASTER;
+
+6 rows created.
+
+SQL> RENAME CLIENT_MASTER_DUPLICATE TO C_MASTER;
+
+Table renamed.
+
+SQL> DROP TABLE C_MASTER;
+
+Table dropped.
+
+SQL> spool off

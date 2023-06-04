@@ -1,0 +1,30 @@
+COnstructive COst estimation MOdel (COCOMO) was proposed by Boehm
+[1981]. COCOMO prescribes a three stage process for project
+estimation. In the first stage, an initial estimate is arrived at. Over the
+next two stages, the initial estimate is refined to arrive at a more
+accurate estimate. COCOMO uses both single and multivariable
+estimation models at different stages of estimation.
+The three stages of COCOMO estimation technique are—basic COCOMO,
+intermediate COCOMO, and complete COCOMO.
+
+
+Divides software product developments into 3 categories: 
+Organic 
+Semidetached 
+Embedded
+
+Organic: 
+Relatively small groups: the size of the development team is reasonably small, and the team members are experienced in developing similar types of projects. 
+working to develop well-understood applications.
+Semidetached:
+Project team consists of a mixture of experienced and  inexperienced staff. 
+Embedded: 
+The software is strongly coupled to complex hardware,  or real-time systems.
+
+What is a person-month?
+Person-month (PM) is a popular unit for effort measurement.
+Person-month (PM) is considered to be an appropriate unit for measuring effort,
+because developers are typically assigned to a project for a certain number of
+months.
+
+https://www.geeksforgeeks.org/software-engineering-cocomo-model/

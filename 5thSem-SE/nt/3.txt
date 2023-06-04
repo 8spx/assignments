@@ -1,0 +1,31 @@
+Function point metric was proposed by Albrecht in 1983. This metric overcomes many of the shortcomings of the LOC metric. Since its inception in late 1970s, function point metric has steadily gained popularity. Function point metric has several advantages over LOC metric. One of the important advantages of the function point metric over the LOC metric is that it can easily be computed from the problem specification itself.
+
+The conceptual idea behind the function point metric is the following. The size of a software product is directly dependent on the number of different high-level functions or features it supports. This assumption is reasonable, since each feature would take additional effort to implement.
+
+Conceptually, the function point metric is based on the idea that a software product supporting many features would certainly be of larger size than a product with less number of features.
+
+Function point (FP) metric computation
+The size of a software product (in units of function points or FPs) is computed using different characteristics of the product identified in its requirements specification. It is computed using the following three
+steps:
+Step 1: Compute the unadjusted function point (UFP) using a heuristic expression.
+Step 2: Refine UFP to reflect the actual complexities of the different parameters used in UFP computation.
+Step 3: Compute FP by further refining UFP to account for the specific characteristics of the project that can influence the entire development effort.
+
+Feature point metric shortcomings: A major shortcoming of the
+function point measure is that it does not take into account the
+algorithmic complexity of a function. That is, the function point metric
+implicitly assumes that the effort required to design and develop any
+two different functionalities of the system is the same. But, we know
+that this is highly unlikely to be true. The effort required to develop any
+two functionalities may vary widely. For example, in a library
+automation software, the create-member feature would be much
+simpler compared to the loan-from-remote-library feature. FP only
+considers the number of functions that the system supports, without
+distinguishing the difficulty levels of developing the various
+functionalities. To overcome this problem, an extension to the function
+point metric called feature point metric has been proposed.
+Feature point metric incorporates algorithm complexity as an extra
+parameter. This parameter ensures that the computed size using the feature
+point metric reflects the fact that higher the complexity of a function, the
+greater the effort required to develop it—therefore, it should have larger size
+compared to a simpler function.

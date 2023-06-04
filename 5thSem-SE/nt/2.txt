@@ -1,0 +1,52 @@
+###############
+# Gnatt Chart #
+###############
+Gantt chart has been named after its developer Henry Gantt. A Gantt chart is a form of bar chart. The vertical axis lists all the tasks to be performed. The bars are drawn along the y-axis, one for each task. Gantt charts used in software project management are actually an enhanced version of the standard Gantt charts. In the Gantt charts used for software project management, each bar consists of a unshaded part and a shaded part. The shaded part of the bar shows the length of time each task is estimated to take. The unshaded part shows the slack time or lax time. The lax time represents the leeway or flexibility available in meeting the latest time by which a task must be finished. 
+Gantt charts are useful for resource planning (i.e. allocate resources to activities). The different types of resources that need to be allocated to activities include staff, hardware, and software.
+
+#######################################################################################################################################################
+# A Gantt chart is a special type of bar chart where each bar represents an activity. The bars are drawn along a time line. The length of each bar is # # proportional to the duration of time planned for the corresponding activity.									      #
+#######################################################################################################################################################
+
+Gantt chart representation of a project schedule is helpful in planning the utilization of resources, while PERT chart is useful for monitoring the timely progress of activities. Also, it is easier to identify parallel activities in a project using a PERT chart. Project managers need to identify the parallel activities in a project for assignment to different developers.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+###################
+# Network Diagram #
+###################
+An Activity Network Diagram is a diagram of project activities that shows the sequential relationships of activities using arrows and nodes. An activity network diagram tool is used extensively in and is necessary for the identification of a project’s critical path (which is used to determine the expected completion time of the project).
+A network diagram is a graphical representation of the project and is composed of a series of connected arrows and boxes to describe the inter-relationship between the activities involved in the project. Boxes or nodes represent the description of activities and arrows show the relationship among the activities. There must be a start and finish the activity, and all the other activities fall within these two.
+Prior to the network diagram, the project manager must have determined the dependencies of each task.  In theory, every task must be dependent on at least one other (except the first task) else it would not be part of the project.  Hence, if you are in a project management class make sure they are all dependent upon one another.
+
+There are four types of dependencies:
+
+Finish to Start (FS):  Task B cannot start until Task A completes.  This is the most common.
+Finish to Finish (FF):  Task B cannot finish until Task A completes.
+Start to Start (SS):  Task B cannot start until Task A starts.
+Start to Finish (SF):  Task B cannot start until Task A start (this one is rare).
+Also, the tasks do not have to line up exactly.  A lead time means that Task B doesn’t start until a period of time has elapsed, and a lag time means that Task B starts before Task A finishes.  In project management software, there is usually only a lag time specified, and a lead time is simply entered as negative lag.
+A task box is usually drawn with six boxes.  The duration and float are in the middle, and the four task dates are in the corners.
+The four corners are defined as follows:
+
+Early Start (ES):  The earliest possible date that the task will be able to start.
+Early Finish (EF):  The earliest possible date that the task will be able to finish.
+Late Start (LS):  The latest possible date that the task will be able to start without affecting the overall project completion date.
+Late Finish (LF):  The latest possible date that the task will be able to finish without affecting the overall project completion date.
+The Duration box is known prior to drawing the network diagram.  It is an input.  The four corners will be calculated, starting with the ES and EF via a forward pass, then the LF and LS via a backward pass.  Finally, the float is calculated, which is an output of the network diagram.
+
+
+Critical Path Method (CPM)
+A path in the activity network graph is any set of consecutive nodes and edges in this graph from the starting node to the last node. 
+A critical path consists of a set of dependent tasks that need to be performed in a sequence and which together take the longest time to complete.
+
+CPM is an algorithmic approach to determine the critical paths and slack times for tasks not on the critical paths involves calculating the following quantities:
+Minimum time (MT): It is the minimum time required to complete the project. It is computed by determining the maximum of all paths from start to finish.
+Earliest start (ES): It is the time of a task is the maximum of all paths from the start to this task. The ES for a task is the ES of the previous task plus the duration of the preceding task.
+Latest start time (LST): It is the difference between MT and the maximum of all paths from this task to the finish. The LST can be computed by subtracting the duration of the subsequent task from the LST of the subsequent task.
+Earliest finish time (EF): The EF for a task is the sum of the earliest start time of the task and the duration of the task.
+Latest finish (LF): LF indicates the latest time by which a task can finish without affecting the final completion time of the project. A task completing beyond its LF would cause project delay. LF of a task can be obtained by subtracting maximum of all paths from this task to finish from MT.
+Slack time (ST): The slack time (or float time) is the total time that a task may be delayed before it will affect the end time of the project. The slack time indicates the ”flexibility” in starting and completion of tasks. ST for a task is LS-ES and can equivalently be written as LF-EF.
+
+PERT Charts
+Project evaluation and review technique (PERT) charts are a more sophisticated form of activity chart. Project managers know that there is considerable uncertainty about how much time a task would exactly take to complete. The duration assigned to tasks by the project manager are after all only estimates. Therefore, in reality the duration of an activity is a random variable with some probability distribution. 

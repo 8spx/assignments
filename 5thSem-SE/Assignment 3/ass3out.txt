@@ -1,0 +1,54 @@
+Enter Value of Low External Inputs = 0
+
+Enter Value of Average External Inputs = 50
+
+Enter Value of High External Inputs = 0
+
+Enter Value of Low External Outputs = 0
+
+Enter Value of Average External Outputs = 40
+
+Enter Value of High External Outputs = 0
+
+Enter Value of Low External Enquiries = 0
+
+Enter Value of Average External Enquiries = 35
+
+Enter Value of High External Enquiries = 0
+
+Enter Value of Low Internal Logical Files = 0
+
+Enter Value of Average Internal Logical Files = 6
+
+Enter Value of High Internal Logical Files = 0
+
+Enter Value of Low External Interface Files = 0
+
+Enter Value of Average External Interface Files = 4
+
+Enter Value of High External Interface Files = 0
+
+Value of UFP = 628
+Enter Rating of 14 Factors (Scale: 0-5):
+0 - No Influence
+1 - Incidental
+2 - Moderate
+3 - Average
+4 - Significant
+5 - Essentail
+Value 0f 1 = 3
+Value 0f 2 = 3
+Value 0f 3 = 3
+Value 0f 4 = 3
+Value 0f 5 = 3
+Value 0f 6 = 3
+Value 0f 7 = 3
+Value 0f 8 = 3
+Value 0f 9 = 3
+Value 0f 10 = 3
+Value 0f 11 = 3
+Value 0f 12 = 3
+Value 0f 13 = 3
+Value 0f 14 = 3
+
+AFP Value = 671.960022Hit any key to close this window...

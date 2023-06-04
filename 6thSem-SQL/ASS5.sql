@@ -1,0 +1,18 @@
+SET LINESIZE 200;
+SELECT ename,dname,loc FROM emp e INNER JOIN dept d ON e.deptno=d.deptno ORDER BY dname DESC;
+SELECT ename,sal,loc FROM emp e INNER JOIN dept d ON e.deptno=d.deptno WHERE loc='DALLAS' ORDER BY sal DESC;
+SELECT ename,loc FROM emp e NATURAL JOIN dept d WHERE d.loc=(SELECT loc FROM emp e NATURAL JOIN dept d WHERE ename='FORD') AND ename<>'FORD';
+SELECT ename,dname,job,loc FROM emp e INNER JOIN dept d ON e.deptno=d.deptno WHERE loc='DALLAS';
+SELECT sal,sal*0.1 pf, sal*0.6 hra, sal*0.4 da,sal+sal*0.1+sal*0.6+sal*0.4 gross FROM EMP ORDER BY gross;
+SELECT e1.empno,e1.ename,e1.mgr,e2.ename mgr_name FROM emp e1,emp e2 WHERE e1.mgr=e2.empno AND e2.ename='KING';
+SELECT * FROM emp NATURAL JOIN dept WHERE loc='DALLAS' AND sal>(SELECT MAX(sal) FROM emp NATURAL JOIN dept WHERE loc='CHICAGO');
+SELECT * FROM emp WHERE job=(SELECT job FROM emp WHERE ename='SMITH') AND ename<>'SMITH';
+SELECT ROWNUM AS rank, job, avg_sal FROM(SELECT job,AVG(sal) avg_sal FROM emp GROUP BY job ORDER BY avg_sal DESC) WHERE ROWNUM=1; 
+SELECT ROWNUM AS rank, job, ename, sal FROM(SELECT * FROM emp ORDER BY sal DESC) WHERE ROWNUM <= 10;
+SELECT REPLACE(ename,'A','a') FROM emp;
+SELECT ename,sal,ROUND(sal,-3) FROM emp;
+SELECT e1.ename,e1.job,e1.sal,e2.ename boss FROM emp e1,emp e2 WHERE e1.mgr=e2.empno; 
+SELECT e1.ename,e1.mgr,e1.deptno,e2.ename mrg_name,e2.deptno mgr_dept FROM emp e1,emp e2 WHERE e1.mgr=e2.empno AND e1.deptno<>e2.deptno;
+SELECT SUBSTR(ename,1,3) first_3 ,SUBSTR(ename,-3,3) last_3 FROM emp;
+SELECT(SELECT MIN(sal) FROM emp WHERE job=(SELECT job FROM emP WHERE ename='KING'))- sal DIFF FROM emp WHERE ename='MILLER';
+SELECT e1.empno,e1.ename,e1.mgr,e2.ename mgr_name FROM emp e1,emp e2 WHERE e1.mgr=e2.empno;

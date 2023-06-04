@@ -1,0 +1,124 @@
+SQL> SELECT Name FROM CLIENT_MASTER WHERE Name LIKE '_a%';
+
+NAME                                                                                                                                                                                                    
+------------------------------                                                                                                                                                                          
+Vandana Satiwal                                                                                                                                                                                         
+Basu Navindgi                                                                                                                                                                                           
+Ravi Sreedharan                                                                                                                                                                                         
+
+SQL> SELECT Name,City FROM CLIENT_MASTER WHERE City NOT LIKE 'B%';
+
+NAME                           CITY                                                                                                                                                                     
+------------------------------ ---------------                                                                                                                                                          
+Vandana Satiwal                Madras                                                                                                                                                                   
+Pramada Jaguste                Kolkata                                                                                                                                                                  
+Ravi Sreedharan                Delhi                                                                                                                                                                    
+
+SQL> SELECT Name,City FROM CLIENT_MASTER WHERE LENGTH(Name) = 12 AND Name LIKE 'I%';
+
+NAME                           CITY                                                                                                                                                                     
+------------------------------ ---------------                                                                                                                                                          
+Ivan Bayross                   Bombay                                                                                                                                                                   
+
+SQL> SELECT Name,City FROM CLIENT_MASTER WHERE City IN ('Bombay','Delhi');
+
+NAME                           CITY                                                                                                                                                                     
+------------------------------ ---------------                                                                                                                                                          
+Ivan Bayross                   Bombay                                                                                                                                                                   
+Basu Navindgi                  Bombay                                                                                                                                                                   
+Ravi Sreedharan                Delhi                                                                                                                                                                    
+Rukmini                        Bombay                                                                                                                                                                   
+
+SQL> SELECT * FROM CLIENT_MASTER WHERE Balance_due > 10000;
+
+CLIENT NAME                           ADDRESS1                       ADDRESS2                       CITY            STATE              PINCODE BALANCE_DUE                                              
+------ ------------------------------ ------------------------------ ------------------------------ --------------- --------------- ---------- -----------                                              
+C001   Ivan Bayross                   P-76                           Worli                          Bombay          Maharastra          400054       15000                                              
+
+SQL> SELECT * FROM SALES_ORDER WHERE TO_CHAR(Order_date,'MON') = 'JAN';
+
+ORDER_ ORDER_DAT CLIENT SALESM D B DELIVERY_ ORDER_STAT                                                                                                                                                 
+------ --------- ------ ------ - - --------- ----------                                                                                                                                                 
+O19001 12-JAN-96 C001   S001   F N 20-JAN-96 InProcess                                                                                                                                                  
+O19002 25-JAN-96 C002   S002   P N 27-JAN-96 BackOrder                                                                                                                                                  
+
+SQL> SELECT * FROM SALES_ORDER WHERE Client_no IN ('C001','C002');
+
+ORDER_ ORDER_DAT CLIENT SALESM D B DELIVERY_ ORDER_STAT                                                                                                                                                 
+------ --------- ------ ------ - - --------- ----------                                                                                                                                                 
+O19001 12-JAN-96 C001   S001   F N 20-JAN-96 InProcess                                                                                                                                                  
+O19002 25-JAN-96 C002   S002   P N 27-JAN-96 BackOrder                                                                                                                                                  
+O19003 03-APR-96 C001   S001   F Y 07-APR-96 Fullfilled                                                                                                                                                 
+
+SQL> SELECT * FROM PRODUCT_MASTER WHERE Sell_price BETWEEN 2001 AND 4999;
+
+PRODUC DESCRIPTION                              PROFIT_PERCENT UNIT_MEASU QTY_ON_HAND REORDER_LEVEL SELL_PRICE COST_PRICE                                                                               
+------ ---------------------------------------- -------------- ---------- ----------- ------------- ---------- ----------                                                                               
+P07868 Keyboard                                              2 Piece               10             3       3150       3050                                                                               
+
+SQL> SELECT * FROM PRODUCT_MASTER WHERE Sell_price > 1500;
+
+PRODUC DESCRIPTION                              PROFIT_PERCENT UNIT_MEASU QTY_ON_HAND REORDER_LEVEL SELL_PRICE COST_PRICE                                                                               
+------ ---------------------------------------- -------------- ---------- ----------- ------------- ---------- ----------                                                                               
+P03453 Monitors                                              6 Piece               10             3      12000      11280                                                                               
+P07868 Keyboard                                              2 Piece               10             3       3150       3050                                                                               
+P07885 CD Drive                                            2.5 Piece               10             3       5250       5100                                                                               
+P07965 540 HDD                                               4 Piece               10             3       8400       8000                                                                               
+
+SQL> SELECT Sell_price,Sell_price * 1.15 NEW_PRICE FROM PRODUCT_MASTER;
+
+SELL_PRICE  NEW_PRICE                                                                                                                                                                                   
+---------- ----------                                                                                                                                                                                   
+       525     603.75                                                                                                                                                                                   
+     12000      13800                                                                                                                                                                                   
+      1050     1207.5                                                                                                                                                                                   
+       525     603.75                                                                                                                                                                                   
+      3150     3622.5                                                                                                                                                                                   
+      5250     6037.5                                                                                                                                                                                   
+      8400       9660                                                                                                                                                                                   
+      1050     1207.5                                                                                                                                                                                   
+      1025    1178.75                                                                                                                                                                                   
+
+9 rows selected.
+
+SQL> SELECT Name,City,State FROM CLIENT_MASTER WHERE State != 'Maharastra';
+
+NAME                           CITY            STATE                                                                                                                                                    
+------------------------------ --------------- ---------------                                                                                                                                          
+Vandana Satiwal                Madras          TamilNadu                                                                                                                                                
+Pramada Jaguste                Kolkata         West Bengal                                                                                                                                              
+Ravi Sreedharan                Delhi           Delhi                                                                                                                                                    
+
+SQL> SELECT Delivery_date, TO_CHAR(Delivery_date,'Month-DD') FROM SALES_ORDER;
+
+DELIVERY_ TO_CHAR(DELIVERY_DATE,'MONTH-DD')                                                                                                                                                             
+--------- ---------------------------------------                                                                                                                                                       
+20-JAN-96 January  -20                                                                                                                                                                                  
+27-JAN-96 January  -27                                                                                                                                                                                  
+20-FEB-96 February -20                                                                                                                                                                                  
+07-APR-96 April    -07                                                                                                                                                                                  
+22-MAY-96 May      -22                                                                                                                                                                                  
+26-MAY-96 May      -26                                                                                                                                                                                  
+
+6 rows selected.
+
+SQL> SELECT Order_no,Order_date, TO_CHAR(Order_date,'DD-Month-YY') FROM SALES_ORDER;
+
+ORDER_ ORDER_DAT TO_CHAR(ORDER_DATE,'DD-MONTH-YY')                                                                                                                                                      
+------ --------- ------------------------------------------                                                                                                                                             
+O19001 12-JAN-96 12-January  -96                                                                                                                                                                        
+O19002 25-JAN-96 25-January  -96                                                                                                                                                                        
+O46865 18-FEB-96 18-February -96                                                                                                                                                                        
+O19003 03-APR-96 03-April    -96                                                                                                                                                                        
+O46866 20-MAY-96 20-May      -96                                                                                                                                                                        
+O19008 24-MAY-96 24-May      -96                                                                                                                                                                        
+
+6 rows selected.
+
+SQL> SELECT SYSDATE + 15 FROM DUAL;
+
+SYSDATE+1                                                                                                                                                                                               
+---------                                                                                                                                                                                               
+20-JUL-21                                                                                                                                                                                               
+
+SQL> spool off
